@@ -38,7 +38,7 @@ app.put("/users/:id", (request, response) => {
     return;
   }
 
-  const updatedUser = request.body;
+  const newData = request.body;
 
   if (newData.name) {
     userToUpdate.name = newData.name;
@@ -49,9 +49,20 @@ app.put("/users/:id", (request, response) => {
   }
 
   if (newData.married !== undefined && newData.married !== null) {
-    user.married = newData.married;
+    userToUpdate.married = newData.married;
   }
+
+  listUsers = listUsers.map((user) => {
+    if (user.id === Number(id)) {
+      return userToUpdate;
+    }
+
+    return user;
+  });
+
+  response.status(200).json(userToUpdate);
 });
+
 
 app.listen(3000, () => {
   console.log("Servidor iniciado na porta 3000");
