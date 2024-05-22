@@ -1,0 +1,19 @@
+{
+  "name": "aula-3",
+  "version": "1.0.0",
+  "description": "Um projeto sobre Jacarés",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
